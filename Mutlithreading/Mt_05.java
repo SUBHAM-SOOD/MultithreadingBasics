@@ -62,6 +62,6 @@ public class Mt_05 {
         System.out.println("Thread Priority is : "+obj007.getPriority());
         System.out.println("Thread Priority is : "+obj008.getPriority());
         System.out.println("Thread Priority is : "+obj009.getPriority());
-        
+
     }
 }

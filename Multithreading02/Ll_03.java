@@ -15,7 +15,7 @@ public class Ll_03 {
 
         th5.start();
         System.out.println("Is th5 thread a daemon thread "+th5.isDaemon());
-     
+
 
     }
 }

@@ -22,13 +22,17 @@ public class Ll_01 {
     public static void main(String[] args) throws InterruptedException  {
 
         Chf_abc th1 = new Chf_abc();
+        System.out.println("Thread th1 state is "+th1.getState());
         System.out.println("Starting th01 here");
         th1.start();
+        System.out.println("Thread th1 state is "+th1.getState());
         System.out.println("Making th1 thread to sleep");
         Thread.sleep(700);
+        System.out.println("Thread th1 state is "+th1.getState());
 
         System.out.println("Waiting for other thread to get work done");
         th1.join();
+        System.out.println("Thread th1 state is "+th1.getState());
 
         System.out.println("Both done");
 

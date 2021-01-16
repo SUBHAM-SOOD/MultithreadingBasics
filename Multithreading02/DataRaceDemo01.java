@@ -1,26 +1,29 @@
 package Multithreading02;
+import java.util.concurrent.locks.*;
 /*
 Data Race Example
 * */
-class abc7 extends Thread{
-    static int garlic = 0 ;
+class Shopper extends Thread{
+    static int garlicCount = 0 ;
+    static Lock pencil = new ReentrantLock();
     @Override
     public void run(){
-        for(int i = 0 ; i < 1000000 ;i++){
-            System.out.println();
-            garlic++;
+        pencil.lock();
+        for(int i = 0 ; i < 1000000 ;i++)
+            garlicCount++;
+            pencil.unlock();
         }
     }
-}
+
 
 public class DataRaceDemo01 {
     public static void main(String[] args) throws InterruptedException {
-        abc7 Thread01 = new abc7();
-        abc7 Thread02 = new abc7();
+        Shopper Thread01 = new Shopper();
+        Shopper Thread02 = new Shopper();
         Thread01.start();
         Thread02.start();
         Thread01.join();
         Thread02.join();
-        System.out.println("Number of Gralics required are " +abc7.garlic);
+        System.out.println("Number of Garlics required are " +Shopper.garlicCount);
     }
 }

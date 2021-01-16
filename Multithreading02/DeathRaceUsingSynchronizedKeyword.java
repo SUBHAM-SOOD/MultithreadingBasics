@@ -23,7 +23,7 @@ public class DeathRaceUsingSynchronizedKeyword {
         ab1.join();
         ab2.join();
 
-        System.out.println("We need in total " +ShopperOne.garlicCount+ " garlics");
+        System.out.println("We need in total " +ShopperOne.garlicCount+ "garlics");
 
 
     }
